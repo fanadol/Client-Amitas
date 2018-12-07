@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="icon" type="image/png" sizes="32x32" href="node_modules/bulma/img/favicon.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+      <link rel="stylesheet" href="node_modules/bulma/css/bulma_ext.css">
+      <title>Amitas | Kabar Komunitas</title>
+   </head>
+   <body>
+      <div id="app"></div>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+         // Functions
+         
+         function getAll(selector) {
+         return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
+         }
+         
+         // Toggles
+         
+         var $burgers = getAll('.burger');
+         
+         if ($burgers.length > 0) {
+         $burgers.forEach(function($el) {
+         	$el.addEventListener('click', function() {
+         		var target = $el.dataset.target;
+         		var $target = document.getElementById(target);
+         		$el.classList.toggle('is-active');
+         		$target.classList.toggle('is-active');
+         	});
+         });
+         }
+         });
+      </script>
+      <!-- built files will be auto injected -->
+   </body>
+</html>
